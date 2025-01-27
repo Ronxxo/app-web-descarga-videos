@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar</title>
+    <style> body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0; /* Un gris claro de fondo */
+    }
+    .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center; /* Centrar el texto dentro del contenedor */
+    }
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+    p {
+        margin-top: 10px; /* Espacio arriba de los mensajes */
+    } </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Descargar Video de YouTube</h1>
+        <form method="POST" action="/descargar">
+            <label for="urlInput">Introduce la URL:</label>
+            <input type="text" id="urlInput" name="url" placeholder="URL de YouTube">
+            <button type="submit">Descargar</button>
+        </form>
+        {% if error %} <p style="color: red;">{{ error }}</p> {% endif %}
+        {% if message %} <p style="color: green;">{{ message }}</p> {% endif %}
+    </div>
+</body>
+</html>
